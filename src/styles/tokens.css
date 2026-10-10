@@ -1,0 +1,79 @@
+/*
+ * Brand tokens. The five colours are the only hues on the site; every other
+ * value is a tint generated from them. Source: brand guide p.15–16.
+ */
+@theme {
+  --color-*: initial;
+  --color-ink: #19191a;
+  --color-charcoal: #4d4e4e;
+  --color-ember: #f16b41;
+  --color-sky: #729abc;
+  --color-sand: #f1ece3;
+  --color-transparent: transparent;
+  --color-current: currentColor;
+
+  /* Tints shown in the guide: 80 / 50 / 30 %. */
+  --color-ember-80: color-mix(in oklab, var(--color-ember) 80%, var(--color-sand));
+  --color-ember-50: color-mix(in oklab, var(--color-ember) 50%, var(--color-sand));
+  --color-sand-80: color-mix(in oklab, var(--color-sand) 80%, var(--color-ink));
+  --color-sand-60: color-mix(in oklab, var(--color-sand) 64%, var(--color-ink));
+  --color-ink-80: color-mix(in oklab, var(--color-ink) 80%, var(--color-sand));
+  --color-ink-90: color-mix(in oklab, var(--color-ink) 92%, var(--color-sand));
+  /* Ember darkened toward ink: passes AA for small text on sand. */
+  --color-ember-deep: color-mix(in oklab, var(--color-ember) 62%, var(--color-ink));
+
+  --font-*: initial;
+  --font-ar: 'Thmanyah Serif Text', 'IBM Plex Sans Arabic', 'Noto Naskh Arabic', serif;
+  --font-en: 'Poppins', 'Thmanyah Serif Text', sans-serif;
+
+  --text-*: initial;
+  --text-label: 0.8125rem;
+  --text-small: 0.9375rem;
+  --text-body: clamp(1.0625rem, 0.98rem + 0.3vw, 1.1875rem);
+  --text-lead: clamp(1.25rem, 1.05rem + 0.8vw, 1.75rem);
+  --text-h3: clamp(1.375rem, 1.15rem + 0.9vw, 1.875rem);
+  --text-h2: clamp(2rem, 1.4rem + 2.4vw, 3.5rem);
+  --text-h1: clamp(2.75rem, 1.6rem + 4.6vw, 6rem);
+  --text-display: clamp(3.25rem, 1.2rem + 8.6vw, 11.25rem);
+  --text-numeral: clamp(7rem, 3rem + 16vw, 20rem);
+
+  --ease-cine: cubic-bezier(0.22, 1, 0.36, 1);
+
+  --radius-panel: 20px;
+  --radius-pill: 999px;
+
+  --breakpoint-sm: 40rem;
+  --breakpoint-md: 48rem;
+  --breakpoint-lg: 64rem;
+  --breakpoint-xl: 80rem;
+  --breakpoint-2xl: 96rem;
+}
+
+:root {
+  --gutter: clamp(16px, 5vw, 96px);
+  --page-max: 1440px;
+  --header-h: 72px;
+
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
+  --space-9: 96px;
+  --space-10: 128px;
+  --space-11: 192px;
+  --space-12: 256px;
+
+  --dur-ui: 240ms;
+  --dur-reveal: 1000ms;
+
+  /* Glass recipe */
+  --glass-blur: 22px;
+  --glass-fill-dark: color-mix(in oklab, var(--color-ink) 45%, transparent);
+  --glass-fill-ember: color-mix(in oklab, var(--color-sand) 22%, transparent);
+  --glass-edge-hi: color-mix(in oklab, var(--color-sand) 22%, transparent);
+  --glass-edge-lo: color-mix(in oklab, var(--color-sand) 4%, transparent);
+}

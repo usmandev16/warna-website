@@ -1,0 +1,101 @@
+/*
+ * Editorial type roles. Arabic is never letter-spaced; Latin display gets a
+ * slight negative track and labels a positive one, only under lang="en" or
+ * on elements explicitly marked as Latin.
+ */
+@layer components {
+  .t-display {
+    font-size: var(--text-display);
+    font-weight: 900;
+    line-height: 1.1;
+    text-wrap: balance;
+  }
+
+  .t-h1 {
+    font-size: var(--text-h1);
+    font-weight: 900;
+    line-height: 1.12;
+    text-wrap: balance;
+  }
+
+  .t-h2 {
+    font-size: var(--text-h2);
+    font-weight: 900;
+    line-height: 1.2;
+    text-wrap: balance;
+  }
+
+  .t-h3 {
+    font-size: var(--text-h3);
+    font-weight: 500;
+    line-height: 1.4;
+  }
+
+  .t-lead {
+    font-size: var(--text-lead);
+    font-weight: 300;
+    line-height: 1.75;
+    text-wrap: pretty;
+  }
+
+  .t-body {
+    font-size: var(--text-body);
+    font-weight: 300;
+    line-height: 1.8;
+    text-wrap: pretty;
+  }
+
+  .t-small {
+    font-size: var(--text-small);
+    font-weight: 400;
+    line-height: 1.6;
+  }
+
+  /* Index labels such as [ 01 ] — always Latin numerals in Poppins. */
+  .t-index {
+    font-family: var(--font-en);
+    font-size: var(--text-label);
+    font-weight: 400;
+    line-height: 1;
+    letter-spacing: 0.08em;
+    font-variant-numeric: tabular-nums;
+    direction: ltr;
+    unicode-bidi: isolate;
+  }
+
+  .t-label {
+    font-size: var(--text-small);
+    font-weight: 500;
+    line-height: 1.3;
+  }
+
+  .t-numeral {
+    font-family: var(--font-en);
+    font-size: var(--text-numeral);
+    font-weight: 200;
+    line-height: 0.85;
+    font-variant-numeric: tabular-nums;
+    letter-spacing: -0.04em;
+  }
+
+  html[lang='en'] .t-display {
+    font-size: clamp(2.75rem, 1rem + 6.2vw, 8.75rem);
+  }
+
+  html[lang='en'] .t-display,
+  html[lang='en'] .t-h1 {
+    font-weight: 800;
+    letter-spacing: -0.035em;
+    line-height: 1.02;
+  }
+
+  html[lang='en'] .t-h2 {
+    font-weight: 700;
+    letter-spacing: -0.025em;
+    line-height: 1.1;
+  }
+
+  html[lang='en'] .t-label {
+    letter-spacing: 0.01em;
+  }
+}
